@@ -1,0 +1,47 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    padding: 40px;
+    margin: 0;
+    font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+.wrapper {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.todo {
+    list-style-type: none;
+}
+
+.todo li{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.todo li + li {
+    border-top: 1px solid #ddd;
+}
+
+.todo li .fa-trash {
+    margin-left: auto;
+}
+
+.todo li .fa-circle {
+    margin-right: 10px;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+    padding: 8px;
+    margin-top: 5px;
+}
+
