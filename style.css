@@ -6,16 +6,22 @@
 body {
     padding: 40px;
     margin: 0;
-    font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 14px;
+    background-color: rgb(240, 240, 240);
 }
 
-.wrapper {
-    border: 2px solid #ddd;
-    border-radius: 10px;
+body, input {
+    font-family: 'Jost', sans-serif;
+}
+
+.background {
+    border-radius: 20px;
+    background-color: white;
+    overflow: hidden;
 }
 
 .todo {
+    border-radius: 10px;
     list-style-type: none;
 }
 
@@ -23,14 +29,27 @@ body {
     padding: 10px 20px;
     display: flex;
     align-items: center;
+    cursor: pointer;
+
+}
+
+.todo li:hover{
+    background-color: #fbfbfb;
+}
+.todo li:hover .delete{
+    opacity: 0.3;
 }
 
 .todo li + li {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid rgb(236, 236, 236);
 }
 
-.todo li .fa-trash {
+.todo li .delete {
     margin-left: auto;
+    opacity: 0;
+    /* opacity: 0.5; */
+    transition: all .25s ease;
+
 }
 
 .todo li .fa-circle {
@@ -38,10 +57,18 @@ body {
 }
 
 input {
-    border-radius: 5px;
-    border: 1px solid #ddd;
     background-color: white;
-    padding: 8px;
-    margin-top: 5px;
-}
+    padding: 10px 20px;
+    /* cursor: text; */
+    outline: 0;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    width:100%;
 
+}
+input:focus {
+
+    /* background-color: red; */
+
+}
