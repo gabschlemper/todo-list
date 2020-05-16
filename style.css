@@ -52,7 +52,7 @@ body, input {
 
 }
 
-.todo li .fa-circle {
+.todo li .check {
     margin-right: 10px;
 }
 
@@ -65,10 +65,5 @@ input {
     border: 0;
     border-bottom: 1px solid #ddd;
     width:100%;
-
-}
-input:focus {
-
-    /* background-color: red; */
 
 }
