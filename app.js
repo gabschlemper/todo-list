@@ -3,7 +3,7 @@ var todoList = document.querySelector('.todo')
 var tituloItem = document.querySelector('input')
 
 var listaDeTarefas = [];
-var id = 0;
+var id;
 
 function adicionarItem(objeto) {
     var nome = objeto.title;
@@ -16,8 +16,11 @@ function adicionarItem(objeto) {
 function carregarLista() {
     var tarefasDoLocalStorage = localStorage.getItem('TODO');
 
-    if (tarefasDoLocalStorage !== null) {
+    if (tarefasDoLocalStorage !== null && JSON.parse(tarefasDoLocalStorage).length) {
         listaDeTarefas = JSON.parse(tarefasDoLocalStorage)
+        id = listaDeTarefas[listaDeTarefas.length - 1].id + 1;
+    } else {
+        id = 0;
     }
 
     listaDeTarefas.forEach(function(item) {
@@ -45,15 +48,16 @@ tituloItem.addEventListener("keyup", function(event){
 todoList.addEventListener('click', function(event){
     var alvo = event.target;
     var valorDoATributo = alvo.getAttribute('job');
+    var itemId = listaDeTarefas.findIndex(function(item) { return item.id === Number(alvo.id); });
 
     if (valorDoATributo === 'delete') {
         todoList.removeChild(alvo.parentNode);
-        listaDeTarefas.splice(alvo.id, 1)
+        listaDeTarefas.splice(itemId, 1);
         salvarArrayNoLocalStorage (listaDeTarefas)
     }
 
     if (valorDoATributo === 'check') {
-        var itemDoArray = listaDeTarefas[alvo.id];
+        var itemDoArray = listaDeTarefas[itemId];
 
         if (itemDoArray.completed === true){
             itemDoArray.completed = false;
