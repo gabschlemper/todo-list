@@ -33,7 +33,6 @@ tituloItem.addEventListener("keyup", function(event){
             id: id,
             title: texto,
             completed: false,
-            trash: false
         }
         adicionarItem(meuObjeto); 
 
@@ -45,7 +44,7 @@ tituloItem.addEventListener("keyup", function(event){
 
 todoList.addEventListener('click', function(event){
     var alvo = event.target;
-    var valorDoATributo = alvo.getAttribute('job')
+    var valorDoATributo = alvo.getAttribute('job');
 
     if (valorDoATributo === 'delete') {
         todoList.removeChild(alvo.parentNode);
@@ -56,7 +55,7 @@ todoList.addEventListener('click', function(event){
     if (valorDoATributo === 'check') {
         var itemDoArray = listaDeTarefas[alvo.id];
 
-        if (itemDoArray.completed === true) {
+        if (itemDoArray.completed === true){
             itemDoArray.completed = false;
             alvo.classList.remove('fa-check-circle')
             alvo.classList.add('fa-circle')

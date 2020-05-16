@@ -37,7 +37,7 @@ body, input {
     background-color: #fbfbfb;
 }
 .todo li:hover .delete{
-    opacity: 0.3;
+    opacity: 0.7;
 }
 
 .todo li + li {
@@ -46,8 +46,7 @@ body, input {
 
 .todo li .delete {
     margin-left: auto;
-    opacity: 0;
-    /* opacity: 0.5; */
+    opacity: 0.4;
     transition: all .25s ease;
 
 }
